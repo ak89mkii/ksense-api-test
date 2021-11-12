@@ -1,10 +1,9 @@
 # Ksense API Test App
 
+### Postman Image:
 ![Screenshot 01](01.png)
 
 ## Deployed App Link: https://
-
-## Trello Board Link: https://trello.com/b/WR7rc9CH/playbook-technical-challenge
 
 ## GitHub Repo: https://github.com/ak89mkii/ksense-api-test
 
@@ -15,4 +14,5 @@
 - You have full freedom in how you accomplish the above objectives.
 - You also have full freedom as far as design is concerned.
 
-### Streach Goals:
+### Job Description Page Link: https://www.indeed.com/viewjob?from=appsharedroid&jk=c1387af2d6e6a1be
+
