@@ -1,6 +1,8 @@
 //Constants:
 
-const api_url = 'https://jsonplaceholder.typicode.com/users'
+const api_url = 'https://jsonplaceholder.typicode.com/users/1'
+
+const 
 
 // Cached Element References:
 
@@ -19,7 +21,13 @@ const userID = document.getElementById("user");
 async function getUsers() {
     const response = await fetch(api_url);
     const data = await response.json();
-    console.log(data);
+    const { id, name } = data;
+
+    document.getElementById('userID').textContent = id;
+    document.getElementById('userName').textContent = name;
+    
+    // console.log(data.id);
+    // console.log(data.name);
 }
 
 getUsers();
