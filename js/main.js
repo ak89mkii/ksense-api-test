@@ -2,6 +2,7 @@
 
 const api_url = 'https://jsonplaceholder.typicode.com/users'
 const api_url_post = 'https://jsonplaceholder.typicode.com/posts?userId=1'
+const api_url_post2 = 'https://jsonplaceholder.typicode.com/posts?userId=2'
 
 // Functions:
 
@@ -15,6 +16,10 @@ async function getUsers() {
     const responseAlt = await fetch(api_url_post);
     const dataAlt = await responseAlt.json();
     console.log(dataAlt)
+
+    const responseAlt2 = await fetch(api_url_post2);
+    const dataAlt2 = await responseAlt2.json();
+    console.log(dataAlt2)
 
     buildTable(data);
 
@@ -50,13 +55,27 @@ async function getUsers() {
         displayPosts(dataAlt);
     });
 
+    userID02.addEventListener('click', function() {
+        displayPosts2(dataAlt2);
+    });
+
     function displayPosts(dataAlt) {
         let name = document.getElementById('posterName')
-
+        let goku = ''
+        name.innerHTML = goku
+        
         for (let i = 0; i < dataAlt.length; i++) {
-            let goku = ''
-            name.innerHTML = goku
+            let goku =
+                `<div class="alert alert-dark" role="alert"><h5>${dataAlt[i].title}</h5>
+                <p>${dataAlt[i].body}</p></div>`
+            name.innerHTML += goku
         }
+    }
+
+    function displayPosts2(dataAlt) {
+        let name = document.getElementById('posterName')
+        let goku = ''
+        name.innerHTML = goku
         
         for (let i = 0; i < dataAlt.length; i++) {
             let goku =
