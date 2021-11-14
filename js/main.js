@@ -1,15 +1,6 @@
 //Constants:
 const api_url = 'https://jsonplaceholder.typicode.com/users'
 const api_url_post = 'https://jsonplaceholder.typicode.com/posts'
-const api_url_post02 = 'https://jsonplaceholder.typicode.com/posts?userId=2'
-const api_url_post03 = 'https://jsonplaceholder.typicode.com/posts?userId=3'
-const api_url_post04 = 'https://jsonplaceholder.typicode.com/posts?userId=4'
-const api_url_post05 = 'https://jsonplaceholder.typicode.com/posts?userId=5'
-const api_url_post06 = 'https://jsonplaceholder.typicode.com/posts?userId=6'
-const api_url_post07 = 'https://jsonplaceholder.typicode.com/posts?userId=7'
-const api_url_post08 = 'https://jsonplaceholder.typicode.com/posts?userId=8'
-const api_url_post09 = 'https://jsonplaceholder.typicode.com/posts?userId=9'
-const api_url_post10 = 'https://jsonplaceholder.typicode.com/posts?userId=10'
 
 // Functions:
 
@@ -20,14 +11,10 @@ async function getUsers() {
     const data = await response.json();
     console.log(data)
 
-    // fetch posts 01.
+    // fetch posts userId 01 to 10.
     const responseAlt = await fetch(api_url_post);
     const dataAlt = await responseAlt.json();
     console.log(dataAlt)
-    // fetch posts 02.
-    const responseAlt2 = await fetch(api_url_post02);
-    const dataAlt2 = await responseAlt2.json();
-    console.log(dataAlt2)
 
     buildTable(data);
     // Builds the table of users.
@@ -57,7 +44,6 @@ async function getUsers() {
     let userID10 = document.getElementById('Clementina DuBuque');
 
     // Event Listeners:
-    
     userID01.addEventListener('click', function() {
         let idx = 1;
         displayPosts(dataAlt, idx);
@@ -69,45 +55,46 @@ async function getUsers() {
     });
 
     userID03.addEventListener('click', function() {
-        let idx = 2;
+        let idx = 3;
         displayPosts(dataAlt, idx);
     });
 
     userID04.addEventListener('click', function() {
-        let idx = 2;
+        let idx = 4;
         displayPosts(dataAlt, idx);
     });
     
     userID05.addEventListener('click', function() {
-        let idx = 2;
+        let idx = 5;
         displayPosts(dataAlt, idx);
     });
 
     userID06.addEventListener('click', function() {
-        let idx = 2;
+        let idx = 6;
         displayPosts(dataAlt, idx);
     });
 
     userID07.addEventListener('click', function() {
-        let idx = 2;
+        let idx = 7;
         displayPosts(dataAlt, idx);
     });
-
+7
     userID08.addEventListener('click', function() {
-        let idx = 2;
+        let idx = 8;
         displayPosts(dataAlt, idx);
     });
 
     userID09.addEventListener('click', function() {
-        let idx = 2;
+        let idx = 9;
         displayPosts(dataAlt, idx);
     });
 
     userID10.addEventListener('click', function() {
-        let idx = 2;
+        let idx = 10;
         displayPosts(dataAlt, idx);
     });
 
+    // Function 02: Display posts after user clicks on name.
     function displayPosts(dataAlt, idx) {
         let name = document.getElementById('posterName')
         let posted = ''
@@ -126,17 +113,3 @@ async function getUsers() {
 
 getUsers();
 
-// Function 02: Display posts after user clicks on "User".
-
-// fetch('https://jsonplaceholder.typicode.com/users', {
-//     method: 'GET',
-//     headers: {
-//         'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//         // id:'',
-//         name:'Leanne Graham'
-//     })
-// })
-//     .then(response => response.json())
-//     .then(json => console.log(json))
