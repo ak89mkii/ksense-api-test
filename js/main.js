@@ -1,28 +1,36 @@
 //Constants:
-
 const api_url = 'https://jsonplaceholder.typicode.com/users'
-const api_url_post = 'https://jsonplaceholder.typicode.com/posts?userId=1'
-const api_url_post2 = 'https://jsonplaceholder.typicode.com/posts?userId=2'
+const api_url_post = 'https://jsonplaceholder.typicode.com/posts'
+const api_url_post02 = 'https://jsonplaceholder.typicode.com/posts?userId=2'
+const api_url_post03 = 'https://jsonplaceholder.typicode.com/posts?userId=3'
+const api_url_post04 = 'https://jsonplaceholder.typicode.com/posts?userId=4'
+const api_url_post05 = 'https://jsonplaceholder.typicode.com/posts?userId=5'
+const api_url_post06 = 'https://jsonplaceholder.typicode.com/posts?userId=6'
+const api_url_post07 = 'https://jsonplaceholder.typicode.com/posts?userId=7'
+const api_url_post08 = 'https://jsonplaceholder.typicode.com/posts?userId=8'
+const api_url_post09 = 'https://jsonplaceholder.typicode.com/posts?userId=9'
+const api_url_post10 = 'https://jsonplaceholder.typicode.com/posts?userId=10'
 
 // Functions:
 
 // Function 01: Fetch JSON from API for table and build table.
-
 async function getUsers() {
+    // fetch users.
     const response = await fetch(api_url);
     const data = await response.json();
     console.log(data)
 
+    // fetch posts 01.
     const responseAlt = await fetch(api_url_post);
     const dataAlt = await responseAlt.json();
     console.log(dataAlt)
-
-    const responseAlt2 = await fetch(api_url_post2);
+    // fetch posts 02.
+    const responseAlt2 = await fetch(api_url_post02);
     const dataAlt2 = await responseAlt2.json();
     console.log(dataAlt2)
 
     buildTable(data);
-
+    // Builds the table of users.
     function buildTable(data) {
         let table = document.getElementById('updatedTable')
     
@@ -37,7 +45,6 @@ async function getUsers() {
     }
 
     // Cached Element References:
-
     let userID01 = document.getElementById('Leanne Graham');
     let userID02 = document.getElementById('Ervin Howell');
     let userID03 = document.getElementById('Clementine Bauch');
@@ -52,36 +59,33 @@ async function getUsers() {
     // Event Listeners:
     
     userID01.addEventListener('click', function() {
-        displayPosts(dataAlt);
+        let idx = 1;
+        displayPosts(dataAlt, idx);
     });
 
     userID02.addEventListener('click', function() {
-        displayPosts2(dataAlt2);
+        let idx = 2;
+        displayPosts(dataAlt, idx);
     });
 
-    function displayPosts(dataAlt) {
+    function displayPosts(dataAlt, idx) {
         let name = document.getElementById('posterName')
-        let goku = ''
-        name.innerHTML = goku
+        let posted = ''
+        name.innerHTML = posted
         
         for (let i = 0; i < dataAlt.length; i++) {
-            let goku =
-                `<div class="alert alert-dark" role="alert"><h5>${dataAlt[i].title}</h5>
-                <p>${dataAlt[i].body}</p></div>`
-            name.innerHTML += goku
-        }
-    }
-
-    function displayPosts2(dataAlt) {
-        let name = document.getElementById('posterName')
-        let goku = ''
-        name.innerHTML = goku
-        
-        for (let i = 0; i < dataAlt.length; i++) {
-            let goku =
-                `<div class="alert alert-dark" role="alert"><h5>${dataAlt[i].title}</h5>
-                <p>${dataAlt[i].body}</p></div>`
-            name.innerHTML += goku
+            if (dataAlt[i].userId == idx) {
+                let posted =
+                    `<div class="alert alert-dark" role="alert"><h5>${dataAlt[i].title}</h5>
+                    <p>${dataAlt[i].body}</p></div>`
+                name.innerHTML += posted
+            }
+            else if (dataAlt[i].userId == idx) {
+                let posted =
+                    `<div class="alert alert-dark" role="alert"><h5>${dataAlt[i].title}</h5>
+                    <p>${dataAlt[i].body}</p></div>`
+                name.innerHTML += posted
+            }
         }
     }
 }

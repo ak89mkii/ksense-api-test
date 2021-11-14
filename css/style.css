@@ -22,12 +22,8 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-.card {
+.message {
+    text-align: center;
     margin: auto;
     width: 60%;
-}
-
-.alert {
-    text-align: center;
-    
 }
