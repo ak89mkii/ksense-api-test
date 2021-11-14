@@ -1,6 +1,8 @@
 # Ksense API Test App
 
 ### Postman Image:
+![Screenshot 01](02.png)
+![Screenshot 01](03.png)
 ![Screenshot 01](01.png)
 
 ## Deployed App Link: https://
