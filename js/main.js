@@ -68,6 +68,46 @@ async function getUsers() {
         displayPosts(dataAlt, idx);
     });
 
+    userID03.addEventListener('click', function() {
+        let idx = 2;
+        displayPosts(dataAlt, idx);
+    });
+
+    userID04.addEventListener('click', function() {
+        let idx = 2;
+        displayPosts(dataAlt, idx);
+    });
+    
+    userID05.addEventListener('click', function() {
+        let idx = 2;
+        displayPosts(dataAlt, idx);
+    });
+
+    userID06.addEventListener('click', function() {
+        let idx = 2;
+        displayPosts(dataAlt, idx);
+    });
+
+    userID07.addEventListener('click', function() {
+        let idx = 2;
+        displayPosts(dataAlt, idx);
+    });
+
+    userID08.addEventListener('click', function() {
+        let idx = 2;
+        displayPosts(dataAlt, idx);
+    });
+
+    userID09.addEventListener('click', function() {
+        let idx = 2;
+        displayPosts(dataAlt, idx);
+    });
+
+    userID10.addEventListener('click', function() {
+        let idx = 2;
+        displayPosts(dataAlt, idx);
+    });
+
     function displayPosts(dataAlt, idx) {
         let name = document.getElementById('posterName')
         let posted = ''
@@ -75,12 +115,6 @@ async function getUsers() {
         
         for (let i = 0; i < dataAlt.length; i++) {
             if (dataAlt[i].userId == idx) {
-                let posted =
-                    `<div class="alert alert-dark" role="alert"><h5>${dataAlt[i].title}</h5>
-                    <p>${dataAlt[i].body}</p></div>`
-                name.innerHTML += posted
-            }
-            else if (dataAlt[i].userId == idx) {
                 let posted =
                     `<div class="alert alert-dark" role="alert"><h5>${dataAlt[i].title}</h5>
                     <p>${dataAlt[i].body}</p></div>`

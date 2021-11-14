@@ -4,7 +4,6 @@
 
 ### Postman Image:
 ![Screenshot 01](02.png)
-![Screenshot 01](03.png)
 ![Screenshot 01](01.png)
 
 ## GitHub Repo: https://github.com/ak89mkii/ksense-api-test
